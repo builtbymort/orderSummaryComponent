@@ -1,0 +1,219 @@
+//primary colors
+$paleBlue:hsl(225, 100%, 94%);
+$brightBlue:hsl(245, 75%, 52%);
+
+//nuetral colors
+$veryPaleBlue:hsl(225, 100%, 98%);
+$desaturatedBlue:hsl(224, 23%, 55%);
+$darkBlue:hsl(223, 47%, 23%);
+
+@font-face {
+    font-family:'red hat medium';
+    src: url('../fonts/Red_Hat_Display/static/RedHatDisplay-Medium.ttf');
+}
+
+@font-face {
+    font-family:'red hat bold';
+    src: url('../fonts/Red_Hat_Display/static/RedHatDisplay-Bold.ttf');
+}
+
+@font-face {
+    font-family:'red hat black';
+    src: url('../fonts/Red_Hat_Display/static/RedHatDisplay-Black.ttf');
+}
+
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing:border-box;
+}
+
+main
+{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: $paleBlue url('../images/pattern-background-desktop.svg') no-repeat;
+    background-size:contain;
+}
+
+.card
+{
+    width:28%;
+    height:75%;
+    background:#fff;
+    font-family:'red hat medium';
+    border-radius:10px;
+    box-shadow: 0 0 10px #000;
+}
+
+.panel
+{
+    width:100%;
+    // border:1px solid #000;
+}
+
+.top
+{
+    height:30%;
+    border-radius:10px 10px 0 0;
+
+    img
+    {
+        width:100%;
+        height:100%;
+        border-radius:inherit;
+    }
+}
+
+.bottom
+{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    height:70%;
+    border-radius:0 0 10px 10px;
+
+    & section
+    {
+        width:80%;
+        height:90%;
+        padding-top:20px;
+
+        .mainParagraph
+        {
+            text-align:center;
+
+            h1
+            {
+                font-family:'red hat black';
+                font-size:25px;
+                margin-bottom:5px;
+            }
+
+            p
+            {
+                color:$desaturatedBlue;
+                font-size:16px;
+                margin-bottom:10px;
+            }
+        }
+
+        .plan
+        {
+            display:flex;
+            align-items: center;
+            justify-content: space-around;
+            width:100%;
+            height:70px;
+            background:$veryPaleBlue;
+            border-radius: 5px;
+            margin-bottom:20px;
+
+            h4
+            {
+                font-family: 'red hat bold';
+            }
+
+            & div
+            {
+                width:50%;
+                height:60%;
+
+                & h4
+                {
+                    font-family:'red hat bold';
+                }
+
+                & p
+                {
+                    font-family: 'red hat medium';
+                    font-size: 14px;
+                    color:$desaturatedBlue;                   
+                }
+            }
+
+            a
+            {
+                color:$brightBlue;
+            }
+
+            a:hover
+            {
+                color:$desaturatedBlue;
+                text-decoration:none;
+            }
+        }
+
+        .btn
+        {
+            width:100%;
+            height: 40px;
+            border-radius:5px;
+            border-style:none;
+            font-size:16px;
+            font-family: 'red hat bold';
+            background:transparent;
+            margin-bottom:10px;
+        }
+
+        .btn:hover
+        {
+            cursor:pointer;
+        }
+
+        .payment
+        {
+            color:#fff;
+            background:$brightBlue;
+        }
+
+        .payment:hover
+        {
+            background: $desaturatedBlue;
+        }
+
+        .cancel
+        {
+            color:$desaturatedBlue;
+        }
+
+        .cancel:hover
+        {
+            color:#000;
+        }
+    }
+}
+
+@media only screen and (max-width:376px){
+    main
+    {
+        background: $paleBlue url('../images/pattern-background-mobile.svg') no-repeat;
+    }
+    .card
+    {
+        width:90%;
+        height:88%;
+    }
+
+    .bottom
+    {
+        & section
+        {
+            .plan
+            {
+                margin-bottom:8px;
+            }
+
+            .btn
+            {
+                height:50px;               
+            }           
+        }
+    }   
+}
